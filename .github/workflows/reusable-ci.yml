@@ -1,0 +1,35 @@
+name: Reusable CI
+
+# Org-wide reusable CI workflow.
+# Call from any repo with:
+#   uses: vannevar-labs/.github/.github/workflows/reusable-ci.yml@v1.0.0
+on:
+  workflow_call:
+    inputs:
+      node-version:
+        description: Node.js version to use
+        required: false
+        type: string
+        default: "20"
+    secrets:
+      npm-token:
+        description: Optional npm auth token
+        required: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ inputs.node-version }}
+
+      - name: Show context
+        run: |
+          echo "Reusable CI running for ${{ github.repository }}"
+          echo "Node version: ${{ inputs.node-version }}"
+          node --version
