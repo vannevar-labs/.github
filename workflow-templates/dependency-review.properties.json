@@ -1,6 +1,6 @@
 {
     "name": "Dependency Review",
-    "description": "Runs the vannevar-labs org-wide reusable dependency review workflow on pull requests. Requires the dependency graph (GitHub Advanced Security) on the calling repo.",
+    "description": "Runs the vannevar-labs org-wide reusable dependency review workflow on pull requests. Scans dependencies added/changed by a PR for open CVEs, does not alert on existing dependency CVE already on main branhc. Requires the dependency graph (GitHub Advanced Security) enabled on the calling repo.",
     "iconName": "octicon-shield-check",
     "categories": ["Security"]
 }
