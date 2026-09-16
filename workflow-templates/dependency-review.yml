@@ -1,0 +1,17 @@
+name: Dependency Review
+
+# Starter workflow. Calls the org-wide reusable dependency review workflow.
+# See https://github.com/vannevar-labs/dependency-review for inputs.
+on:
+  pull_request:
+    branches: [ "$default-branch" ]
+
+# Required in the caller: in workflow_call the caller's GITHUB_TOKEN
+# permissions are the ceiling and are inherited by the called workflow.
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  dependency-review:
+    uses: vannevar-labs/dependency-review/.github/workflows/dependency-review.yaml@v1

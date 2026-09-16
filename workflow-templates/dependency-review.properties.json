@@ -1,0 +1,6 @@
+{
+    "name": "Dependency Review",
+    "description": "Runs the vannevar-labs org-wide reusable dependency review workflow on pull requests. Requires the dependency graph (GitHub Advanced Security) on the calling repo.",
+    "iconName": "octicon-shield-check",
+    "categories": ["Security"]
+}
